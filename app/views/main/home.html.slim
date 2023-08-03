@@ -1,0 +1,20 @@
+h1 Main#home
+.container
+    .row.justify-content-md-center
+        = form_with url: search_home_index_path, method: :post,  html: { novalidate: "novalidate"}  do |form|
+            .col-md-auto
+                label for="exampleInputEmail1" Phone Number
+                =form.number_field :rang_min, class: "form-control rounded-xl focus:ring-sy-light focus:border-sy-light border border-gray-300 text-xs xl:text-base" 
+            .col-md-auto
+                br
+                label for="exampleInputEmail1" Operador
+                =form.select :operator, options_for_select([['fc','fc'],['pc','pc']], params[:operator]),  {class: "form-select form-select-lg mb-3"} 
+                br
+            .col-md-auto
+                br
+                label for="exampleInputEmail1" Amount
+                =form.number_field :rang_min, class: "form-control rounded-xl focus:ring-sy-light focus:border-sy-light border border-gray-300 text-xs xl:text-base"
+        
+            div[class="flex justify-center my-1 2xl:my-5"]
+                button[class="btn btn-primary mb-2"]Apply Filter
+
