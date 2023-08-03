@@ -3,9 +3,6 @@ Rails.application.routes.draw do
 
   root 'main#home'
   
-  resources :home do
-    collection do
-      post :search
-    end
-  end
+  post 'create', to: 'callapi#create'
+  get 'response', to: 'callapi#show'
 end

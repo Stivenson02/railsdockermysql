@@ -1,0 +1,2 @@
+class Responapi < ApplicationRecord
+end

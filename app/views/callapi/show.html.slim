@@ -1,0 +1,13 @@
+h1 Response
+=@response.last.respuesta
+br 
+br
+-@response.each do |res|
+    br
+    h1 history
+    p "fecha: #{res.created_at.to_date} "
+    p "respuesta: #{res.respuesta} "
+    p "saldo: #{res.saldo} "
+    p "estado: #{res.estado} "
+    br
+

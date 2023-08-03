@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  estado: MyString
+  respuesta: MyString
+  saldo: MyString
+
+two:
+  estado: MyString
+  respuesta: MyString
+  saldo: MyString

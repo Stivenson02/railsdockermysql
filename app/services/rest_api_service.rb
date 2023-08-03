@@ -8,16 +8,17 @@ class RestApiService
     ].freeze
   
     def initialize(data_form: nil)
-        self.data = data_form.nil? ? nil : {
-            "idcomercio":1425,
-            "claveventa":1234,
-            "idtrans":1,
-            "celular": data_form['phone'],
-            "operador": data_form['operator'],
-            "valor": data_form['amount'],
-            "jsonAdicional":""
-        } 
-        self.api ={ url: 'https://recargas.practisistemas.com/api_test/pracRec'}
+      jsonAdicional= data_form[:operator] == "fc" ? {"idPre"=>"99694264"} : "";
+      self.data = data_form.nil? ? nil : {
+          "idcomercio":1425,
+          "claveventa":1234,
+          "idtrans":1,
+          "celular": data_form[:phone],
+          "operador": data_form[:operator],
+          "valor": data_form[:amount],
+          "jsonAdicional":jsonAdicional
+      } 
+      self.api ={ url: 'https://recargas.practisistemas.com/api_test/pracRec'}
     end
   
     def call
